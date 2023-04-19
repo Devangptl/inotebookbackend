@@ -6,7 +6,7 @@ const mongoURI = process.env.DATABASE
 
 
 const connectToMongo = ()=>{
-    mongoose.connect(process.env.DATABASE).then(()=>{
+    mongoose.connect(mongoURI).then(()=>{
         console.log("connection successful");
     }).catch((err)=>console.log("no connection"))
       
