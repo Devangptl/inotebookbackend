@@ -1,11 +1,12 @@
 const mongoose = require('mongoose');
-
-const mongoURI = "mongodb+srv://devang:devangpatel@cluster0.xiq0jsm.mongodb.net/inotebooks?retryWrites=true&w=majority"
+mongoose.set('strictQuery', true);
+require('dotenv').config();
+const mongoURI = process.env.DATABASE
 
 
 
 const connectToMongo = ()=>{
-    mongoose.connect(mongoURI).then(()=>{
+    mongoose.connect(process.env.DATABASE).then(()=>{
         console.log("connection successful");
     }).catch((err)=>console.log("no connection"))
       
